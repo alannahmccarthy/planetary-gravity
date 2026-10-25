@@ -1,8 +1,93 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="script.js"></script>
+  <meta name="theme-color" content="#050816">
+  <title>Orbit Lab — Planetary Gravity</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">✦ ORBIT LAB</a>
+    <span class="status"><span class="dot"></span> GRAVITY ENGINE ACTIVE</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">INTERACTIVE SPACE SIMULATOR</p>
+      <h1>Explore the <span>universe.</span></h1>
+      <p class="subtitle">
+        Adjust gravity. Watch planets move. Discover orbital mechanics.
+      </p>
+    </section>
+
+    <section class="simulator">
+      <div class="canvas-wrap">
+        <canvas id="space" aria-label="Planetary gravity simulation"></canvas>
+        <div class="canvas-label">SOL SYSTEM / 2D MODEL</div>
+        <div class="legend"><span></span> ORBITAL TRAILS</div>
+      </div>
+
+      <aside class="controls">
+        <p class="eyebrow">MISSION CONTROL</p>
+        <h2>Simulation settings</h2>
+
+        <div class="control">
+          <div class="control-heading">
+            <label for="gravity">Gravity strength</label>
+            <output id="gravityValue">1.0×</output>
+          </div>
+          <input id="gravity" type="range" min="0.2" max="2"
+            step="0.1" value="1">
+          <div class="range-labels"><span>Weak</span><span>Strong</span></div>
+        </div>
+
+        <div class="control">
+          <div class="control-heading">
+            <label for="speed">Simulation speed</label>
+            <output id="speedValue">1.0×</output>
+          </div>
+          <input id="speed" type="range" min="0.2" max="4"
+            step="0.2" value="1">
+          <div class="range-labels"><span>Slow</span><span>Fast</span></div>
+        </div>
+
+        <div class="buttons">
+          <button id="pause" class="primary">Ⅱ Pause</button>
+          <button id="reset" class="secondary">↺ Reset</button>
+        </div>
+
+        <div class="divider"></div>
+        <p class="eyebrow">LIVE TELEMETRY</p>
+
+        <div class="stat">
+          <span>Simulation time</span>
+          <strong id="time">0.00 years</strong>
+        </div>
+        <div class="stat">
+          <span>Planets tracked</span>
+          <strong>5</strong>
+        </div>
+        <div class="stat">
+          <span>Gravity model</span>
+          <strong>Newtonian</strong>
+        </div>
+
+        <p class="hint">
+          Change gravity and observe how the orbits respond.
+          Reset to restore the initial conditions.
+        </p>
+      </aside>
+    </section>
+
+    <footer>
+      <span>ORBIT LAB © 2026</span>
+      <span>A LITTLE GRAVITY GOES A LONG WAY.</span>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
